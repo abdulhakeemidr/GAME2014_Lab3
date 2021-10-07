@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27b553dd2caddb40a4fa625dd272786, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletNumber: 50
+  bulletNumber: 0
   bulletPrefab: {fileID: 7243842656616615942, guid: 13c37e894085c3048ac3472c7f2a871f, type: 3}
 --- !u!4 &584965221
 Transform:
@@ -330,7 +330,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7959226730606681177, guid: dd57b1c08d388524a8f1c53803474cbf, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7959226730606681183, guid: dd57b1c08d388524a8f1c53803474cbf, type: 3}
       propertyPath: m_RootOrder

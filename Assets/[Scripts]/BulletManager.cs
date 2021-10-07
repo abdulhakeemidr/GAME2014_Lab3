@@ -20,17 +20,28 @@ public class BulletManager : MonoBehaviour
     {
         for(int i = 0; i < bulletNumber; i++)
         {
-            var temp_bullet = Instantiate(bulletPrefab);
-            temp_bullet.SetActive(false);
-            temp_bullet.transform.parent = transform;
-            bulletPool.Enqueue(temp_bullet);
+            AddBullet();
         }
+    }
+
+    private void AddBullet()
+    {
+        var temp_bullet = Instantiate(bulletPrefab);
+        temp_bullet.SetActive(false);
+        temp_bullet.transform.parent = transform;
+        bulletPool.Enqueue(temp_bullet);
     }
 
     // This method removes a bullet prefab from the bullet pool
     // and returns a reference to it
     public GameObject GetBullet(Vector2 spawnPosition)
     {
+        if(bulletPool.Count < 1)
+        {
+            AddBullet();
+            bulletNumber++;
+        }
+
         var temp_bullet = bulletPool.Dequeue();
         temp_bullet.transform.position = spawnPosition;
         temp_bullet.SetActive(true);
